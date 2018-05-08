@@ -42,6 +42,18 @@
 
 
 <script>
+
+
+
+
+
+
+    $('#b2').click(function() {
+        $('.rectangle').css({
+            
+        })
+    }) 
+
     $('#b2').click(function() {
         $('.rectangle').css({
             "background-color":"green"
@@ -65,6 +77,15 @@
 
 </script>
 
+
+let clik = 0;
+
+$('#submit').click(function(){
+    clik++;
+    $('p').replaceWith('<p>' + clik + '</p>')
+})
+
+$('p').replaceWith('<p>' + clik + '</p>')
 
 
 

@@ -19,22 +19,29 @@
 
 <div class="text">
     <p>0</p>
-    <input type="text" name="text" id="text" value="0">
+    <!-- <input type="text" name="text" id="text" value="0"> -->
 </div>
 <div class="bouton">
-    <input type="submit" name="sumbit" id="submit">
+    <button type="button" id="plus">+</button>
+    <button type="button" id="moins">-</button>  
+    <!-- <input type="submit" name="sumbit" id="submit"> -->
 </div>
 
 
 <script>
     let clik = 0;
 
-    $('#submit').click(function(){
+    $('#plus').click(function(){
         clik++;
         $('p').replaceWith('<p>' + clik + '</p>')
     })
 
- $('p').replaceWith('<p>' + clik + '</p>')
+        $('#moins').click(function(){
+        clik--;
+        $('p').replaceWith('<p>' + clik + '</p>')
+    })
+
+
 
 
 </script>
