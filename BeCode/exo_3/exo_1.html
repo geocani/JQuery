@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+        <script type="text/javascript">
+            let clics = 0;
+            function onClick() {
+            clicks += 1;
+            $("#clic").innerHTML = clics;
+            };
+        </script>
+            <button type="button" id="clic">Clickez moi</button>
+            <p>Clicks: <a id="clicks">0</a></p>
+
+
+
+<div class="text">
+    <input type="text" name="text" id="text">
+</div>
+<div class="bouton">
+    <input type="submit" name="sumbit" id="submit">
+</div>
+
+
+
+
+
+<script>
+
+    let clics = 0
+    $("bouton").click(function(){
+        clics += 1;
+        $(".text").innerHTML = clics;
+    })
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
