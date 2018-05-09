@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+	<div class="container-page">
+		<p id="chrono">30</p>
+		<div class="reponse"></div>
+		<form id="formu">
+			<div class="container-txt">
+				<input type="text" name="txt" id="txt" class="txt" >
+			</div>
+			<div class="container-bouton">
+				<button type="submit" id="envoyer">Envoyer</button>
+			</div>
+		</form>
+		<button id="start">Commencer</button>
+	</div>
+
+
+<script>
+	let sec = 20;
+	let prixRandom = 0;
+	let essai = 0;
+	let prop;
+	let msg = [ 
+			"Visiblement tu n'a pas compris.. Je te demande d'écrire des chiffres, pas des lettres.", //0
+			'Stupide humain! Qu est ce que tu ne comprend pas dans "un nombre plus petit que 80"',//1
+			"Je déteste me repeter mais si il le faut.. PLUS GRAND QUE 20 LE CHIFFRE!!",//2
+			"C'est moins !",//3
+			"C'est plus !",//4
+			"F-E-L-I-C-I-T-A-T-I-O-N !!!!! Tu as trouvé le juste prix :-D Bon.. tu n'a rien gagné mais c était plutot fun non?"//5
+			]
+
+	$('document').ready(function(){
+		$('#start').click(function(){
+			prixRandom = Math.floor(Math.random() * 20);
+			console.log(prixRandom)
+			$('#formu').css({"visibility":"visible", "opacity":"1"});
+
+			let chrono = setInterval(function(){
+				if (sec == 0)
+				{
+					clearInterval(chrono); // Arreter chrono
+					$('.reponse').html('perdu!');
+					$('#formu').css({"visibility":"hidden", "opacity":"0"});
+				}
+				else
+				{
+					sec--;
+					$('#chrono').html(sec);
+				}
+			}, 1000);
+		});
+
+		$("#envoyer").click(function(event){
+			prop = $('#txt').val();
+			
+			if (prop == prixRandom) {
+				$(".reponse").html(msg[5])
+				clearInterval(chrono); // Arreter chrono ?????????
+			}
+			else if (prop < prixRandom) {
+				$(".reponse").html(msg[2])
+			}
+			else {
+				$(".reponse").html(msg[1])
+			}
+			prop = $('#txt').val(""); // pour afficher du vide dans le champ a chaque envois.
+
+			event.preventDefault(); //annule les evenement par défaut de l'élément. 
+									//Ne pas recharger la page a l'envois du formulaire
+		});
+
+	});
+
+
+
+</script>
+</body>
+</html>

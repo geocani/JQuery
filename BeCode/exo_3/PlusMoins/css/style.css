@@ -1,0 +1,22 @@
+.container-page {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px dotted black;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+.txt{
+    width: 70px;
+}
+.reponse {
+    width: 200px;
+    height: 50px;
+}
+#formu {
+    transition: 0.25s;
+    visibility: hidden;
+    opacity: 0;
+
+}
