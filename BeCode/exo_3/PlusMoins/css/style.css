@@ -1,3 +1,30 @@
+
+@font-face {
+
+    font-family: 'PROMETHEUS';
+    src: url('PROMETHEUS.ttf');
+
+}
+
+*{
+    box-sizing: border-box;
+}
+body {
+    background-image: url("space.jpg");
+    background-size: cover;
+
+}
+p{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+
+}
+
+
+
 .container-page {
     margin-top: 50px;
     margin-left: auto;
@@ -19,4 +46,64 @@
     visibility: hidden;
     opacity: 0;
 
+}
+
+
+
+.titre {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    height: 150px;
+    /* border: 1px solid red; */
+
+
+}
+
+.titre p {
+    text-align: center;
+    display: inline;
+    font-family: PROMETHEUS;
+
+    
+}
+
+#chrono {
+    font-size: 100px;
+    color: white;
+}
+.titre-style {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+.page{
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    height: 600px;
+    border: 1px solid red;
+}
+
+.robot {
+    padding-top: 33px;
+    width: 380px;
+    height: 600px;
+    background-image: url(robotmini.png);
+    background-size: cover;
+}
+.regles {
+
+    width: 800px;
+    height: 600px;
+    border: 1px solid rgb(9, 255, 0);
 }
