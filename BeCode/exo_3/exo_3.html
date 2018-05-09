@@ -8,51 +8,114 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
-    </script>
+	</script>
+	<style>
+		.container-page {
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			border: 1px dotted black;
+			width: 200px;
+			height: 200px;
+			text-align: center;
+		}
+		.txt{
+			width: 70px;
+		}
+		.reponse {
+			width: 200px;
+			height: 50px;
+		}
+		#formu {
+			transition: 0.25s;
+			visibility: hidden;
+			opacity: 0;
+
+		}
+	</style>
     <title>Document</title>
 </head>
 <body>
-	
-	
-
-
-<div class="container-page">
-	<div class="reponse"></div>
-	<form action="">
-		<div class="container-txt">
-			<input type="text" name="txt" id="txt">
-		</div>
-		<div class="container-bouton">
-			<button id="bouton">Envoyer</button>
-		</div>
-	</form>
-</div>
+	<div class="container-page">
+		<p id="chrono">30</p>
+		<div class="reponse"></div>
+		<form id="formu">
+			<div class="container-txt">
+				<input type="text" name="txt" id="txt" class="txt" >
+			</div>
+			<div class="container-bouton">
+				<button id="bouton">Envoyer</button>
+			</div>
+		</form>
+		<button id="start">Commencer</button>
+	</div>
 
 
 <script>
+	let sec = 5;
+	let prixRandom = 0;
+	let essai = 0;
+	let msg = [ 
+			"ERREUR - Visiblement tu n'a pas compris.. Je te demande d'écrire des chiffres, pas des lettres.", //0
+			'ERREUR - Stupide humain! Qu est ce que tu ne comprend pas dans "un nombre plus petit que 80"',//1
+			"ERREUR - Je déteste me repeter mais si il le faut.. PLUS GRAND QUE 20 LE CHIFFRE!!",//2
+			"C'est moins !",//3
+			"C'est plus !",//4
+			"F-E-L-I-C-I-T-A-T-I-O-N !!!!! Tu as trouvé le juste prix :-D Bon.. tu n'a rien gagné mais c était plutot fun non?"//5
+			]
+
+	$('document').ready(function(){
+		$('#start').click(function(){
+			prixRandom = Math.floor(Math.random() * 20);
+			console.log(prixRandom)
+			$('#formu').css({"visibility":"visible", "opacity":"1"});
+
+			let chrono = setInterval(function(){
+				if (sec == 0)
+				{
+					clearInterval(chrono);
+					$('.reponse').html('perdu!');
+					$('#formu').css({"visibility":"hidden", "opacity":"0"});
+				}
+				else
+				{
+					sec--;
+					$('#chrono').html(sec);
+				}
+			}, 1000);
+		});
 
 
 
 
 
-$(document).ready(function() {
-
-let justePrix = jP(20, 80);
-console.log(justePrix)
 
 
-	$('#bouton').click(function(){
-		if ($("txt").val() == justePrix){
-			alert('ok')
-		}
-		else {
-			alert("non")
-		}
-	})
-})
 
-	
-		let justePrix;
+
+
+
+
+
+
+	});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+	let justePrix;
 		let essai = 0; 
 		let msg = [ 
 			"ERREUR - Visiblement tu n'a pas compris.. Je te demande d'écrire des chiffres, pas des lettres.", //0
@@ -62,51 +125,40 @@ console.log(justePrix)
 			"C'est plus !",//4
 			"F-E-L-I-C-I-T-A-T-I-O-N !!!!! Tu as trouvé le juste prix :-D Bon.. tu n'a rien gagné mais c était plutot fun non?"//5
 			]
+	
 		let jP = function(min, max){
 			let prix = min + (max-min+1)*Math.random();
 			return Math.floor(prix);
 		}
-		let traitement = function(){
+		justePrix = jP(20, 80);
 
-			
+			$('#bouton').click(function() {
 
-			let proposition = $("txt").val();
-			if (isNaN(proposition)) {
+			if (isNaN($("txt").val())) {
 				alert(msg[0])
 				essai++;
-				traitement();
+
 			}else if (proposition <= 19 || proposition >= 81) {
 				essai++;
-				alert(" ERREUR - Le nombre est trop petit ou trop grand");
-				traitement();
+				alert(msg[1]);
+
 			}else if (proposition > justePrix) {
 				essai++;
-				alert("C'est moin")
-				traitement();
+				alert(msg[3])
+
 			}else if (proposition < justePrix) {
 				essai++;
-				alert("C'est plus")
-				traitement();
+				alert(msg[4])
+
 			}else if (proposition == justePrix) {
-				alert("Bravo ! vous avez trouvé le juste prix en "+essai+" essais")
+				alert(msg[5] + "il vous aura fallu " + essais + " pour y arriver")
 			}
-		}
+			})
+	
 	
 		justePrix = jP(20, 80);
-		alert("Le juste prix est: " + justePrix);
 		console.log(justePrix); 
-		traitement();
-
-
-		
-        
-
-
-
-
-
-
-</script>
+</script> -->
 
 </body>
 </html>
