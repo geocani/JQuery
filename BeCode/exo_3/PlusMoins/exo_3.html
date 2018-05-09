@@ -7,6 +7,8 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400i" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"> 
     <title>Document</title>
 </head>
 <body>
@@ -23,13 +25,11 @@
 		</div>	
 		<div class="regles">
 			<div class="cont-story">
-				<p>Tu tombe à point! Les services secrets m'ont charger de trouver une humain
-					capable de trouver le code. Pas la paine de me poser des questions, jeLorem ipsum, dolor sit amet consectetur adipisicing elit. Minima veniam cupiditate minus. 
-					Omnis, ratione veniam soluta recusandae dolore veritatis qui iste doloremque consectetur 
-					nemo saepe consequatur voluptatibus illum, distinctio tenetur?
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima veniam cupiditate minus. 
-					Omnis, ratione veniam soluta recusandae dolore veritatis qui iste doloremque consectetur 
-					nemo saepe consequatur voluptatibus illum, distinctio tenetur?
+				<p class="txt-story">Tu tombes à pique! Le chef d'une société secrète m'a chargé de trouver un humain
+					capable de les aider à sauver le monde... Pour ce faire il te suffit de trouver un code. 
+					Il s'agit d'un nombre situé entre 0 et 100. 
+					A chaque tentative, mon microprocesseur génèrera un indice qui te guidera dans la bonne direction.
+					Attention! tu n'as que quelques secondes pour réussir le défi. Bonne chance.
 				</p>
 			</div>
 			<div class="cont">
@@ -52,7 +52,7 @@
 
 
 <script>
-	let sec = 20;
+	let sec = 40;
 	let prixRandom = 0;
 	let essai = 0;
 	let prop;
@@ -75,7 +75,7 @@
 				if (sec == 0)
 				{
 					clearInterval(chrono); // Arreter chrono
-					$('.reponse').html('perdu!');
+					$('.txt-story').html('perdu!');
 					$('#formu').css({"visibility":"hidden", "opacity":"0"});
 				}
 				else
@@ -90,14 +90,14 @@
 			prop = $('#txt').val();
 			
 			if (prop == prixRandom) {
-				$(".reponse").html(msg[5])
+				$(".txt-story").html(msg[5])
 				clearInterval(chrono); // Arreter chrono ?????????
 			}
 			else if (prop < prixRandom) {
-				$(".reponse").html(msg[2])
+				$(".txt-story").html(msg[2])
 			}
 			else {
-				$(".reponse").html(msg[1])
+				$(".txt-story").html(msg[1])
 			}
 			prop = $('#txt').val(""); // pour afficher du vide dans le champ a chaque envois.
 

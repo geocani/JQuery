@@ -51,11 +51,13 @@ p{
 
 
 .titre {
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
     height: 150px;
-    /* border: 1px solid red; */
+    padding-left: 150px;
+
 
 
 }
@@ -71,16 +73,21 @@ p{
 #chrono {
     font-size: 100px;
     color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgba(0, 162, 255), 0 0 70px rgba(0, 162, 255), 0 0 80px rgba(0, 162, 255), 0 0 100px rgba(0, 162, 255), 0 0 150px rgba(0, 162, 255);
 }
 .titre-style {
     font-size: 72px;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgb(121, 175, 179);
+    text-shadow: 0px 1px 10px rgba(121, 155, 163, 0.75);
 }
 
-
-
+.cont-story {
+    padding: 20px;
+}
+.txt-story {
+    font-size: 20px;
+    font-family: 'Cabin', sans-serif;
+}
 
 
 
@@ -91,7 +98,7 @@ p{
     margin-right: auto;
     width: 1200px;
     height: 600px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .robot {
@@ -100,10 +107,12 @@ p{
     height: 600px;
     background-image: url(robotmini.png);
     background-size: cover;
+    background-color: rgba(0, 162, 255, 0.700);
 }
 .regles {
 
     width: 800px;
     height: 600px;
-    border: 1px solid rgb(9, 255, 0);
+    /* border: 1px solid rgb(9, 255, 0); */
+    background-color: rgba(0, 162, 255, 0.700);
 }
