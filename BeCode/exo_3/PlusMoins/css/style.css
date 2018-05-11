@@ -35,7 +35,20 @@ p{
     text-align: center;
 }
 .txt{
-    width: 70px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(24, 2, 2, 0.315);
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgba(0, 162, 255), 0 0 70px rgba(0, 162, 255), 0 0 80px rgba(0, 162, 255), 0 0 100px rgba(0, 162, 255), 0 0 150px rgba(0, 162, 255);
+
+
+}
+.start {
+
 }
 .reponse {
     width: 200px;
@@ -57,10 +70,8 @@ p{
     width: 1200px;
     height: 150px;
     padding-left: 150px;
-
-
-
 }
+
 
 .titre p {
     text-align: center;
@@ -116,3 +127,33 @@ p{
     /* border: 1px solid rgb(9, 255, 0); */
     background-color: rgba(0, 162, 255, 0.700);
 }
+
+
+
+.btn {
+
+
+    background-color: transparent;
+    border: 2px solid rgb(168, 214, 240);
+    border-radius: 0.6em;
+    color:rgb(168, 214, 240);
+    cursor: pointer;
+    font-size: 15px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  .btn:hover, .btn:focus {
+    color: rgb(75, 154, 160);
+  }
+  .second {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  }
+  .second:hover {
+    box-shadow: 0 0 40px 40px rgba(0, 162, 255, 0.700) inset;
+  }
