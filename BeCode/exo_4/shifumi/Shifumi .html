@@ -9,92 +9,56 @@
     <title>Shifumi </title>
 </head>
 <body>
-    <div class="containerPPC">
-        <div id="pierre" class="choix">
-            <img class="img" src="img/pierre.png" alt="">
-        </div>
-        <div id="papier" class="choix">
-            <img class="img" src="img/papier.png" alt="">
-        </div>
-        <div id="ciseaux" class="choix">
-            <img class="img" src="img/ciseaux.png" alt="">
-        </div>
+    <div class="container-jeu">
+        <select id="shifumi">
+            <option value="pierre">Pierre</option>
+            <option value="papier">Papier</option>
+            <option value="ciseaux">Ciseaux</option>
+        </select>
+        <button id="go">GO!</button>
     </div>
-    <div class="reponse">
+    <div class="container-reponse">
         <p>Choisisez pierre papier ou ciseaux.</p>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
-
-
-    let choixJoueur = $('.choix')
-
-    console.log(choixJoueur)
-
-
-
-
-
-
-
-    // let choixOrdi;
-    // let random = Math.floor(Math.random() * 3);
-    // let ordi = function() {
-    //     if (random == 0) {
-    //         choixOrdi = "pierre";
-    //     }
-    //     else if (random == 1) {
-    //         choixOrdi = "papier";
-    //     }
-    //     else {
-    //         choixOrdi = "ciseaux";
-    //     }
-    //     return choixOrdi;
-    // }
-    // let joueur = function(){
-    //     choixJoueur = $('')
-    // }
-
-
-
-
-
-
-
     $('document').ready(function(){
+        let choixJoueur;
+        let choixOrdi;
+        let ordi = function() {
+		    let random = Math.floor(Math.random() *3)
+		    if (random == 0) { 
+			choixOrdi = "pierre"; 
+		    }
+		    else if (random == 1) { 
+			choixOrdi = "feuille"; 
+		    }
+		    else { 
+			choixOrdi = "ciseaux"; 
+		    }
+            return choixOrdi;
+        }
+        let joueur = function(){
+        choixJoueur = $('#shifumi').val();
+        }
+        let comparaison = function() {
+            if ((choixOrdi == "pierre" && choixJoueur == "ciseaux") || (choixOrdi == "papier" && choixJoueur == "pierre") || (choixOrdi == "ciseaux" && choixJoueur == "papier")){
+                alert("perdu");
+            }
+            else if (choixOrdi == choixJoueur) {
+                alert('match nul');
+            }
+            else {
+                alert("gagné");
+            }
+        }
         ordi()
+        console.log(choixOrdi)
+        $('#go').click(function(){
+            joueur()
+            comparaison()
+            console.log(choixJoueur);
+        })
         
-        console.log(choixOrdi);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

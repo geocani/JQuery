@@ -10,7 +10,7 @@ body{
     margin: 20px;
 }
 
-.containerPPC {
+.container-jeu {
     width: 480px;
     margin-top: 100px;
     margin-left: auto;
@@ -18,7 +18,7 @@ body{
     display: flex;
 }
 
-.reponse {
+.container-reponse {
     text-align: center;
     color: yellowgreen;
 }
