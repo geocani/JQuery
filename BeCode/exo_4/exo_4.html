@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Shifumi </title>
+</head>
+<body>
+   <div class="titre">
+        <h1>Exo 4.4 Formulaire.</h1>
+   </div>
+   <div class="formulaire">
+        <form action="">
+            <input type="text" id="nom" placeholder="Nom">
+            <input type="text" id="prenom" placeholder="Prénom">
+            <input type="date" id="dateN">
+            <select id="villeN">
+                <option value="belgique">Belgique</option>
+                <option value="france">France</option>
+                <option value="allemagne">Allemagne</option>
+                <option value="suisse">suisse</option>
+            </select>
+            <input type="text" id="emploi" placeholder="Emploi">
+            <input type="text" id="societe" placeholder="Société"><br>
+            <button id="envoyer">Envoyer</button>
+        </form>
+   </div>
+   <div class="reponse">
+    <p>Réponse:</p>
+   </div>
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('document').ready(function(){
+
+        $('#envoyer').click(function(){
+            let nom = $('#nom').val();
+            let prenom = $('#prenom').val();
+            let emploi = $('#emploi').val();
+            let ville = $('#villeN').val();
+            let date = $('#dateN').val();
+            $('.reponse').html(nom + " " + prenom + ", né le " + date + " à " + ville + ", actuelement " + emploi + " à " + societe + ".")
+        })
+
+
+    });
+</script>
+</body>
+</html>
