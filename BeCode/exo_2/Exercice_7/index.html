@@ -21,7 +21,7 @@
 				<li>Manipulations des feuilles de style en cascade (ajout/suppression des classes, d'attributs…) ;</li>
 				<li><span class="vert">AJAX</span> ;</li>
 				<li>Plugins ;</li>
-				<li>Utilitaires (version du <a href="https://fr.wikipedia.org/wiki/Navigateur_web">navigateur web</a>,...).</li>
+				<li>Utilitaires (version du <a title="ok" href="https://fr.wikipedia.org/wiki/Navigateur_web">navigateur web</a>,...).</li>
 			</ul>	
 		</div>
 		
@@ -41,45 +41,65 @@
 		<script type="text/javascript" src="jquery.js"></script>
 		<script>
 			$(document).ready(function(){
+				let clicks = 0;
 				
 				/* agrandir la police de caractères (120%) */
 				
-				
-				/* diminuer la police de caractères (80%) */
-		
-				
+				$("#un").click(function(){
+					$("body").css({
+					"font-size":"120%"
+					})
+				})
+					/* diminuer la police de caractères (80%) */
+			
+				$("#deux").click(function(){
+					$("body").css({
+					"font-size":"80%"
+					})
+				})
 				/* mettre en gras ou remettre en normal les mots en vert */
+
+				$("#trois").click(function() {
+					if (clicks == 0){
+						$('.vert').css({"font-weight": "bold"})
+						clicks++;
+					} else {
+						$('.vert').css({"font-weight": "normal"})
+						clicks--;
+					}
+					
+				});
 
 				
 				/* souligner ou remettre en normal les mots en rouge */
-			
+				$("#quatre").click(function() {
+					if (clicks == 0){
+						$('.rouge').css({"text-decoration": "underline"})
+						clicks++;
+					} else {
+						$('.rouge').css({"text-decoration": "none"})
+						clicks--;
+					}
+					
+				});
 				
 				/* remplacer le logo par une autre image au survol */
-				
+				$("#cinque").mouseover(function(){
+					$('img').attr('src','koala.jpg');
+				})
+				$("#cinque").mouseout(function(){
+					$('img').attr('src','jquery-logo.png');
+				})
 				
 				/* Afficher l'URL des liens dans une infobulle lors du survol des liens */
+		
+				$(document).tooltip();
 				
+
 				/* ajouter "Chapitre 1 :" devant le 1er titre h2<br>et "Chapitre 2 :" devant le 2ème titre h2 */
 				
-			$("#un").click(function(){
-				$("body").css({
-					"font-size":"120%"
-				})
-			})
 
-			$("#deux").click(function(){
-				$("body").css({
-					"font-size":"80%"
-				})
-			})
 
-			$("#trois").click(function() {
-				$(".vert").toggle()
-			})
-
-			$("quatre").click(function(){
-
-			})
 
 
 
@@ -92,6 +112,7 @@
 
 
 			});
+
 		</script>
 	</body>
 </html>	
