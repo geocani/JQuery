@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #202020;
+}
+
+.img {
+    margin: 20px;
+}
+
+.containerPPC {
+    width: 480px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.reponse {
+    text-align: center;
+    color: yellowgreen;
+}
