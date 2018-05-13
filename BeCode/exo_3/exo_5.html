@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+</head>
+<body>
+<style>
+    * {
+        padding:0; 
+        margin:0;
+    }
+
+.zone {
+    border:3px solid #000000; 
+    margin:100px; 
+    height:150px; 
+    width:300px
+}
+.carre {
+    background:red; 
+    width:50px; 
+    height:50px; 
+}
+</style>
+
+    <div class="zone">
+        <div class="carre">
+
+        </div>
+    </div>
+
+<script>
+
+        
+
+
+
+</script>
+<script>
+    // VARIABLES
+    let zone = $('.zone');
+    let zoneBordure = 3;
+    let zoneHauteur = zone.height();
+    let zoneLargeur = zone.width();
+    let carre = $('carre');
+    let carreHauteur = carre.height();
+    let carreLargeur = carre.width();
+    // deffinition de la zone en pixel (pour savoir où sont les bordures)
+    let pxlHaut = zone.offset().top + zoneBordure; // offset retourne la position dans l'element celectionné (en px)
+    let pxlGauche = zone.offset().left + zoneBordure;
+    let pxBas = pixelHaut + zoneHauteur - zoneBordure;
+    let pxDroite = pxGauche + zoneLargeur - zoneBordure;
+
+    $('document').ready(function() {
+        function mouvement() {
+          console.log(zoneHauteur)
+        }
+
+
+
+
+
+
+
+
+
+        mouvement();
+    });
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
