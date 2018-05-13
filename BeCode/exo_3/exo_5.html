@@ -38,14 +38,25 @@
     </div>
 
 <script>
+    // gérer les sens des mouvements (orientations sur les axes X et Y), 
+    // les déplacements (initialisés à 0) et la vitesse de déplacement (timing).
+    // Les valeurs des orientations de mouvement et du timing joue sur la 
+    // fluidité de l’animation !
+    
 
-        
+    // Variable utile pour la boucle de mouvement
+    let orientationX = 3; // Valeur de déplacement
+    let orientationY = 3; // Valeur de déplacement
+    deplacementX = 0; // Variable globale par défaut (pour éviter les mauvais déplacements)
+    deplacementY = 0; // Variable globale par défaut (pour éviter les mauvais déplacements)
+    let timing = 1000/25000; // x images par seconde
+
 
 
 
 </script>
 <script>
-    // VARIABLES
+    // VARIABLES zone de deplacement et element à deplacer
     let zone = $('.zone');
     let zoneBordure = 3;
     let zoneHauteur = zone.height();
@@ -54,7 +65,7 @@
     let carreHauteur = carre.height();
     let carreLargeur = carre.width();
     // deffinition de la zone en pixel (pour savoir où sont les bordures)
-    let pxlHaut = zone.offset().top + zoneBordure; // offset retourne la position dans l'element celectionné (en px)
+    let pxlHaut = zone.offset().top + zoneBordure; // .offset() retourne la position dans l'element celectionné (en px)
     let pxlGauche = zone.offset().left + zoneBordure;
     let pxBas = pixelHaut + zoneHauteur - zoneBordure;
     let pxDroite = pxGauche + zoneLargeur - zoneBordure;
