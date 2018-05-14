@@ -27,7 +27,7 @@
         <span class="erreur">Email valide</span><br>
         <input type="text" id="tel" placeholder="Telephone">
         <span class="erreur">Telephone valide</span><br>
-        <input type="submit" id="submit">
+        <button id="envoyer">Envoyer</button>
     </form>
 </div>
 
@@ -36,36 +36,61 @@
 
 
 <script>
+    $(function(){
+        $('#envoyer').click(function(){
+            //NOM
+            if ($('#nom').val() == ""){
+                $('#nom').css('background-color','red');
+                $('#nom').next('.erreur').fadeIn();
+            } else {
+                $('#nom').css({'border-color':'green', 'background-color':'transparent'});
+                $('#nom').next('.erreur').fadeOut();
+            }
+            //PRENOM
+            if ($('#prenom').val() == ""){
+                $('#prenom').css('background-color','red');
+                $('#prenom').next('.erreur').fadeIn();
+            } else {
+                $('#prenom').css({'border-color':'green', 'background-color':'transparent'});
+                $('pre#nom').next('.erreur').fadeOut();
+            }
+            //EMAIL
+            if ($('#email').val() == ""){
+                $('#email').css('background-color','red');
+                $('#email').next('.erreur').fadeIn();
+            } else {
+                $('#email').css({'border-color':'green', 'background-color':'transparant'});
+                $('#email').next('.erreur').fadeOut();
+            }
+            //TELEPHONE
+            if ($('#tel').val() == ""){
+                $('#tel').css('background-color','red');
+                $('#tel').next('.erreur').fadeIn();
+            } else {
+                $('#tel').css({'border-color':'green', 'background-color':'transparent'});
+                $('#tel').next('.erreur').fadeOut();
+            }
 
 
-    // $(function(){
-    //     $('#submit').click(function(){
-    //         let val = true;
-    //         //NOM
-    //         if($('#nom').val() == ""){
-    //             $('#nom').css('background-color', 'red');
-    //             $('.erreur').fadeIn().html('nom');
-    //             val = false;
-    //         } else {
-    //             $('#nom').css('background-color', 'green');
-    //             $('.erreur').fadeOut();
-    //             val = false;
-    //         }
-    //         //PRENOM
-    //         if($('#prenom').val() == ""){
-    //             $('#prenom').css('background-color', 'red');
-    //             $('.erreur').fadeIn().html('prenom');
-    //             val = false;
-    //         } else {
-    //             $('#prenom').css('background-color', 'green');
-    //             $('.erreur').fadeOut();
-    //             val = false;
-    //         }
-    //         //EMAIL
-    //         //TEL
-    //         return val;
-    //     });
-    // });
+
+
+
+
+
+
+            return false;
+        });
+
+
+
+
+
+
+
+
+
+    });
+
 
 
 </script>
