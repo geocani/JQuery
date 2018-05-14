@@ -12,6 +12,9 @@ body {
 .page {
     width: 900px;
     height: 700px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 #menu {
@@ -23,6 +26,8 @@ body {
     background-color: rgb(189, 184, 184);
     width: 900px;
     height: 600px;
+    text-align: center;
+    font-size: 50px;
 }
 ul {
     list-style-type: none;
@@ -31,10 +36,22 @@ li {
     float: left;
 }
 a {
+    margin-left: 20px;
+    margin-top: 40px;
     display: block;
     padding-right: 10px;
     padding-left: 10px;
     font-size: 20px;
     text-decoration: none;
     color: white;
+}
+a:hover{
+    color: rgb(55, 128, 150);
+}
+.num-page{
+    width: 900px;
+    height: 600px;
+    padding-top: 50px;
+    text-align: center;
+    font-size: 50px;
 }

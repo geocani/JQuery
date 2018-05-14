@@ -9,23 +9,13 @@
     <title>slide</title>
 </head>
 <body>
-    <section class="page">
-        <div id="menu">
-            <ul>
-                <li><a href="un.php">un</a></li>
-                <li><a href="deux.php">deux</a></li>
-                <li><a href="trois.php">trois</a></li>
-                <li><a href="quatre.php">quarte</a></li>
-            </ul>
-        </div>
-        <div id="article"><h1>INDEX</h1></div>
-    </section>
-
-
-<script>
+    <div class="num-page">
+        <h1>QUATRE</h1>
+    </div>
+    <script>
     $(function(){
         $('a').click(function(){
-            let page = $(this).attr('href');
+            let page = $('a').attr('href');
             $.ajax({
                 url: page, // contenu à afficher 
                 cache: false, // facultatif, annuler mise en cache
@@ -33,7 +23,7 @@
                     afficher(html);
                 },
                 error:function(XMLHttpRequest,textStatus, errorThrown){
-                    afficher('erreur');
+                    alert(textStatus);
                 }
 
 
@@ -44,11 +34,8 @@
     });
 
     let afficher = function(data) {
-        $('#article').fadeOut(1000, function(){
-            $('#article').empty() // efface le contenu
-            $('#article').append(data); // afficher nouveau contenu
-            $('#article').fadeIn(1000)
-        })
+        $('#article').empty() // efface le contenu
+        $('#article').append(data); 
     }
 
 
