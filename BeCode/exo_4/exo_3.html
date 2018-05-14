@@ -20,13 +20,13 @@
 <div class="form">
     <form action="">
         <input type="text" id="nom" placeholder="Nom">
-        <span class="erreur">Nom valide</span><br>
+        <span class="erreur"></span><br>
         <input type="text" id="prenom" placeholder="Prénom">
-        <span class="erreur">Prénom valide</span><br>
+        <span class="erreur"></span><br>
         <input type="email" id="email" placeholder="Email">
-        <span class="erreur">Email valide</span><br>
+        <span class="erreur"></span><br>
         <input type="text" id="tel" placeholder="Telephone">
-        <span class="erreur">Telephone valide</span><br>
+        <span class="erreur"></span><br>
         <button id="envoyer">Envoyer</button>
     </form>
 </div>
@@ -41,23 +41,30 @@
             //NOM
             if ($('#nom').val() == ""){
                 $('#nom').css('background-color','red');
-                $('#nom').next('.erreur').fadeIn();
-            } else {
+                $('#nom').next('.erreur').fadeIn().html("champ vide");
+            
+            } 
+           
+            else if (!$('#nom').val().match(/^[a-z]+$/i)) {
+                $('#nom').css('background-color','red');
+                $('#nom').next('.erreur').fadeIn().html("pas valide");
+            }
+            else {
                 $('#nom').css({'border-color':'green', 'background-color':'transparent'});
                 $('#nom').next('.erreur').fadeOut();
             }
             //PRENOM
             if ($('#prenom').val() == ""){
                 $('#prenom').css('background-color','red');
-                $('#prenom').next('.erreur').fadeIn();
+                $('#prenom').next('.erreur').fadeIn().html("champ vide");
             } else {
                 $('#prenom').css({'border-color':'green', 'background-color':'transparent'});
-                $('pre#nom').next('.erreur').fadeOut();
+                $('#prenom').next('.erreur').fadeOut();
             }
             //EMAIL
             if ($('#email').val() == ""){
                 $('#email').css('background-color','red');
-                $('#email').next('.erreur').fadeIn();
+                $('#email').next('.erreur').fadeIn().html('champ vide');
             } else {
                 $('#email').css({'border-color':'green', 'background-color':'transparant'});
                 $('#email').next('.erreur').fadeOut();
@@ -65,7 +72,7 @@
             //TELEPHONE
             if ($('#tel').val() == ""){
                 $('#tel').css('background-color','red');
-                $('#tel').next('.erreur').fadeIn();
+                $('#tel').next('.erreur').fadeIn().html('champ vide');
             } else {
                 $('#tel').css({'border-color':'green', 'background-color':'transparent'});
                 $('#tel').next('.erreur').fadeOut();
