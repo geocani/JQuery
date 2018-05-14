@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Shifumi </title>
+</head>
+<body>
+
+<style>
+    .erreur {
+        display: none;
+        color: red;
+    }
+</style>
+
+<div class="form">
+    <form action="">
+        <input type="text" id="nom" placeholder="Nom">
+        <span class="erreur">Nom valide</span><br>
+        <input type="text" id="prenom" placeholder="Prénom">
+        <span class="erreur">Prénom valide</span><br>
+        <input type="email" id="email" placeholder="Email">
+        <span class="erreur">Email valide</span><br>
+        <input type="text" id="tel" placeholder="Telephone">
+        <span class="erreur">Telephone valide</span><br>
+        <input type="submit" id="submit">
+    </form>
+</div>
+
+
+
+
+
+<script>
+
+
+    // $(function(){
+    //     $('#submit').click(function(){
+    //         let val = true;
+    //         //NOM
+    //         if($('#nom').val() == ""){
+    //             $('#nom').css('background-color', 'red');
+    //             $('.erreur').fadeIn().html('nom');
+    //             val = false;
+    //         } else {
+    //             $('#nom').css('background-color', 'green');
+    //             $('.erreur').fadeOut();
+    //             val = false;
+    //         }
+    //         //PRENOM
+    //         if($('#prenom').val() == ""){
+    //             $('#prenom').css('background-color', 'red');
+    //             $('.erreur').fadeIn().html('prenom');
+    //             val = false;
+    //         } else {
+    //             $('#prenom').css('background-color', 'green');
+    //             $('.erreur').fadeOut();
+    //             val = false;
+    //         }
+    //         //EMAIL
+    //         //TEL
+    //         return val;
+    //     });
+    // });
+
+
+</script>
+</body>
+</html>
