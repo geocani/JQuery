@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Shifumi </title>
+</head>
+<body>
+
+<style>
+    .erreur {
+        display: none;
+        color: red;
+    }
+</style>
+
+<div class="form">
+    <form action="">
+        <input type="text" id="nom" placeholder="Nom">
+        <span class="erreur"></span><br>
+        <input type="text" id="prenom" placeholder="Prénom">
+        <span class="erreur"></span><br>
+        <input type="email" id="email" placeholder="Email">
+        <span class="erreur"></span><br>
+        <input type="text" id="tel" placeholder="Telephone">
+        <span class="erreur"></span><br>
+        <button id="envoyer">Envoyer</button>
+    </form>
+</div>
+
+
+
+
+
+<script>
+    $(function(){
+        $('#envoyer').click(function(){
+            if($('#nom').val() == ""){
+                $('#nom').css('background-color','red');
+            }
+
+
+
+
+
+
+
+            return false;
+        });
+    });
+
+
+</script>
+</body>
+</html>
