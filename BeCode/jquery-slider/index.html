@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>slide</title>
+</head>
+<body>
+<style>
+    body {
+        background-color: rgb(85, 83, 83);
+    }
+    .container {
+        width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 150px;
+    }
+    .cont-bouton {
+        display: flex;
+    }
+    .droite {
+        width: 500px;
+    }
+    .gauche {
+        width: 500px;
+    }
+    #galerie {
+        height: 200px;
+        background-color: gray;
+        overflow: hidden;
+    }
+    #galerie img {
+        width: 150px;
+        height: 150px;
+        margin-top: 25px;
+    }
+    .slider {
+        position: relative; /*IMPORTANT*/
+        left: 0px;
+        width: 5000px;
+        height: 150px;
+    }
+
+</style>
+<div class="container">
+    <div id="galerie">
+        <div class="slider" id="slider">
+            <a href="#"><img src="img/chat1.jpeg"></a>
+            <a href="#"><img src="img/chat2.jpg"></a>
+            <a href="#"><img src="img/chat3.jpg"></a>
+            <a href="#"><img src="img/chat4.jpg"></a>
+            <a href="#"><img src="img/chat5.jpg"></a>
+            <a href="#"><img src="img/chat6.jpg"></a>
+            <a href="#"><img src="img/chat7.jpg"></a>
+            <a href="#"><img src="img/chat8.jpg"></a>
+            <a href="#"><img src="img/chat5.jpg"></a>
+        </div>
+    </div>
+    <div class="cont-bouton">
+        <div class="suivant">
+            <button class='gauche' id="gauche">Gauche</button>
+        </div>
+        <div class="apres">
+            <button class='droite' id="droite">Droite</button>
+        </div>
+    </div>  
+</div>
+<script>
+$(function(){
+    // let slider = function(id){
+    //     this.div= $(id);
+    //     this.largeur = this.div.width();
+    // console.log(this.largeur)
+    // }
+
+    // s = new slider('#galerie');
+
+
+
+
+let slider = function(){
+    let slider = $('#slider');
+    let div = $("#galerie");
+    let gauche = $('#gauche');
+    let droite = $('#droite');
+    let saut = $('#galerie').width() / 2;
+
+    droite.click(function(){
+        slider.animate({
+            left:-saut
+        },1000);
+    })
+    gauche.click(function(){
+        slider.animate({
+            left:+saut
+        },1000);
+    })
+
+}
+slider();
+
+
+
+
+
+
+});
+
+
+
+</script>
+</body>
+</html>
